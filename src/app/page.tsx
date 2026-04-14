@@ -68,8 +68,7 @@ export default function Home() {
           >
             TRUCK FEST <br /> 2026
           </motion.h1>
-          
-
+        </div>
       </section>
 
       {/* Features Section */}
