@@ -9,19 +9,13 @@ import { CountdownTimer } from "@/components/CountdownTimer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Navbar segment */}
-      <nav className="relative flex items-center justify-between px-4 md:px-8 py-6 w-full max-w-7xl mx-auto bg-white z-50 h-24 md:h-32">
-        <div className="w-1/3 hidden md:block"></div>
-        <div className="absolute left-1/2 -translate-x-1/2 font-heading text-3xl md:text-6xl tracking-tighter text-black uppercase whitespace-nowrap text-center">
-          TRUCKFEST 2026
-        </div>
-        <div className="flex items-center justify-end w-full md:w-1/3 z-10 sm:mt-12 md:mt-0">
-          <CountdownTimer />
-        </div>
-      </nav>
+      {/* Header bar strictly for Timer */}
+      <div className="absolute top-0 right-0 w-full flex justify-end px-4 md:px-8 py-6 z-50">
+        <CountdownTimer />
+      </div>
 
       {/* Hero Section */}
-      <section className="relative w-full h-[85vh] overflow-hidden flex flex-col items-center pt-16">
+      <section className="relative w-full h-[100svh] overflow-hidden flex flex-col items-center pt-24 md:pt-32">
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -36,9 +30,9 @@ export default function Home() {
         
 
 
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 mt-8">
+        <div className="relative z-10 text-center w-full px-4 mix-blend-difference">
           <motion.p 
-            className="text-lg md:text-xl font-bold text-white/90 uppercase tracking-[0.2em] mb-2"
+            className="text-lg md:text-2xl font-bold text-white uppercase tracking-[0.3em] mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -46,7 +40,7 @@ export default function Home() {
             Gran Premio Móvil Delvac
           </motion.p>
           <motion.h1 
-            className="text-7xl md:text-[9rem] font-heading text-white leading-[0.9] tracking-tighter drop-shadow-2xl uppercase"
+            className="text-7xl md:text-[11rem] font-heading text-white leading-[0.8] tracking-tighter uppercase"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
