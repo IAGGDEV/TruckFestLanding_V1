@@ -53,7 +53,7 @@ export default function Home() {
             Lo que vas a <br /> vivir
           </h2>
           <p className="text-white/70 font-medium max-w-2xl mx-auto text-lg">
-            No es solo una expo… es una experiencia completa donde la belleza y la competencia del asfalto se viven en tiempo real.
+            No es solo una expo… es una experiencia completa donde el poder, la belleza y la competencia del asfalto se viven en tiempo real.
           </p>
         </div>
 
@@ -182,6 +182,11 @@ export default function Home() {
             <SponsorLogo index={19} cardH={100} src="/logo-19.png" />
           </div>
         </div>
+
+        {/* Copyright */}
+        <p className="text-center text-[#c5a977] text-xs font-semibold tracking-widest uppercase mt-12 opacity-70">
+          TruckFest 2026 &mdash; Todos los derechos reservados
+        </p>
 
       </section>
     </main>
