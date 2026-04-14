@@ -53,10 +53,10 @@ export default function Home() {
       {/* Features Section */}
       <section className="relative z-30 bg-white pt-32 pb-24 px-4 w-full">
         <div className="max-w-4xl mx-auto text-center mb-20">
-          <h2 className="text-5xl md:text-7xl font-heading text-[#2e1f1a] mb-6 tracking-tighter uppercase leading-[0.9]">
+          <h2 className="text-5xl md:text-7xl font-heading text-black mb-6 tracking-tighter uppercase leading-[0.9]">
             Lo que vas a <br /> vivir
           </h2>
-          <p className="text-gray-600 font-medium max-w-2xl mx-auto text-lg">
+          <p className="text-black/70 font-medium max-w-2xl mx-auto text-lg">
             No es solo una expo… es una experiencia completa donde el poder, el diseño y la competencia se viven en tiempo real.
           </p>
         </div>
@@ -66,61 +66,55 @@ export default function Home() {
             icon={<span className="text-4xl">🏁</span>}
             title="Arrancones de alto nivel"
             description="Con campeones nacionales y estrellas. Tráilers, corredores y portables reconocidos que ya son referencia en la pista."
-            bgColor="bg-[#eaf8fb]"
           />
           <FeatureCard 
             icon={<span className="text-4xl">🔥</span>}
             title="Caravana de arranque"
             description="El convoy que marca el inicio del evento y prende el ambiente desde el primer momento."
-            bgColor="bg-[#fff9ea]"
           />
           <FeatureCard 
             icon={<span className="text-4xl">🚛</span>}
             title="Exhibición masiva"
             description="Más de 350 unidades, desde máquinas clásicas hasta builds extremos totalmente personalizados."
-            bgColor="bg-[#eefbee]"
           />
           <FeatureCard 
             icon={<span className="text-4xl">🎤</span>}
             title="Música en vivo"
             description="Ambiente activo durante todo el día para disfrutar en familia o con los amigos."
-            bgColor="bg-[#fcedf3]"
           />
           <FeatureCard 
             icon={<span className="text-4xl">🤝</span>}
             title="Marcas de la industria"
             description="Empresas clave del sector presentes con experiencias, productos y dinámicas."
-            bgColor="bg-[#fdf4e9]"
           />
           <FeatureCard 
             icon={<span className="text-4xl">⭐</span>}
             title="Invitados especiales"
             description="Referentes del gremio y nuevas figuras que están marcando tendencia en el transporte."
-            bgColor="bg-[#eef0fc]"
           />
         </div>
 
-        <div className="mt-32 max-w-5xl mx-auto bg-black text-white rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#c66c3c]/20 to-transparent z-0"></div>
+        <div className="mt-32 max-w-5xl mx-auto bg-[#0a0a0a] text-[#c5a977] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl border border-[#c5a977]/20">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#c5a977]/10 to-transparent z-0"></div>
           <div className="relative z-10 mt-4 rounded-3xl">
-            <h2 className="text-4xl md:text-6xl font-heading mb-8 uppercase text-center leading-[0.9]">Un evento con escala real</h2>
+            <h2 className="text-4xl md:text-6xl font-heading mb-8 uppercase text-center leading-[0.9] text-[#c5a977]">Un evento con escala real</h2>
             <div className="flex flex-col md:flex-row justify-center items-center gap-12 font-bold text-xl md:text-2xl mb-12">
-              <div className="text-[#f07b5a]">350+ <span className="text-white block text-sm font-medium mt-1">Unidades</span></div>
-              <div className="text-[#3ba2cd]">50+ <span className="text-white block text-sm font-medium mt-1">En competencia</span></div>
-              <div className="text-[#abdfec]">100% <span className="text-white block text-sm font-medium mt-1">Nacional e Internacional</span></div>
+              <div className="text-[#c5a977]">350+ <span className="text-[#c5a977]/70 block text-sm font-medium mt-1">Unidades</span></div>
+              <div className="text-[#c5a977]">50+ <span className="text-[#c5a977]/70 block text-sm font-medium mt-1">En competencia</span></div>
+              <div className="text-[#c5a977]">100% <span className="text-[#c5a977]/70 block text-sm font-medium mt-1">Nacional e Internacional</span></div>
             </div>
-            <p className="text-2xl md:text-3xl font-medium text-white/90">
+            <p className="text-2xl md:text-3xl font-medium text-[#c5a977]/90">
               No existe otra experiencia en México a este nivel dentro del mundo trailero. 
             </p>
-            <p className="text-xl md:text-2xl mt-4 font-bold text-[#f07b5a]">Si te gusta este mundo… aquí es donde tienes que estar.</p>
+            <p className="text-xl md:text-2xl mt-4 font-bold text-[#c5a977] opacity-80">Si te gusta este mundo… aquí es donde tienes que estar.</p>
             
-            <div className="mt-16 pt-16 border-t border-white/20 text-left md:text-center grid grid-cols-1 md:grid-cols-2 gap-8 text-white/70">
+            <div className="mt-16 pt-16 border-t border-[#c5a977]/20 text-left md:text-center grid grid-cols-1 md:grid-cols-2 gap-8 text-[#c5a977]/70">
               <div className="text-sm">
-                <span className="block text-white font-bold mb-2 uppercase tracking-widest text-xs">Acceso</span>
+                <span className="block text-[#c5a977] font-bold mb-2 uppercase tracking-widest text-xs">Acceso</span>
                 La compra de boletos es directamente en el Centro Dinámico Pegaso, te recomendamos llegar con anticipación o con la caravana.
               </div>
               <div className="text-sm">
-                <span className="block text-white font-bold mb-2 uppercase tracking-widest text-xs">Presentado por</span>
+                <span className="block text-[#c5a977] font-bold mb-2 uppercase tracking-widest text-xs">Presentado por</span>
                 Kilómetro Cero — El movimiento musical más viral del momento en la industria del transporte.<br/>
                 Nirvania — AI Agency.
               </div>
@@ -132,17 +126,17 @@ export default function Home() {
   );
 }
 
-function FeatureCard({ icon, title, description, bgColor }: { icon: React.ReactNode, title: string, description: string, bgColor: string }) {
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
   return (
     <motion.div 
-      className={`${bgColor} rounded-3xl p-8 flex flex-col items-center text-center shadow-sm hover:shadow-xl transition-shadow duration-300 border border-white`}
+      className="bg-[#0a0a0a] rounded-3xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-xl hover:shadow-[#c5a977]/20 transition-all duration-300 border border-[#c5a977]/20 hover:border-[#c5a977]/50"
       whileHover={{ y: -5 }}
     >
-      <div className="bg-white/50 w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-sm">
+      <div className="bg-[#c5a977]/10 w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-sm border border-[#c5a977]/20">
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-[#2e1f1a] mb-3 leading-tight">{title}</h3>
-      <p className="text-gray-600 text-sm font-medium">{description}</p>
+      <h3 className="text-xl font-bold text-[#c5a977] mb-3 leading-tight">{title}</h3>
+      <p className="text-[#c5a977]/70 text-sm font-medium">{description}</p>
     </motion.div>
   );
 }
