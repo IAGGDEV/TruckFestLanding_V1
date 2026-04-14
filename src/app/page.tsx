@@ -69,47 +69,7 @@ export default function Home() {
             TRUCK FEST <br /> 2026
           </motion.h1>
           
-          <motion.div 
-            className="text-white/90 backdrop-blur-sm bg-black/20 p-6 rounded-2xl border border-white/10 max-w-lg text-left absolute top-48 left-0 hidden lg:block text-sm font-medium shadow-2xl"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <p className="flex items-center gap-2 mb-2"><span className="text-xl">📅</span> Domingo 26 de abril</p>
-            <p className="flex items-center gap-2 mb-2"><span className="text-xl">🕙</span> A partir de las 10:00 a.m.</p>
-            <p className="flex items-center gap-2 mb-4"><span className="text-xl">📍</span> Centro Dinámico Pegaso Toluca MX</p>
-            <p className="text-white/80 leading-relaxed font-bold">
-              El Truck Fest 2026 es el punto donde se reúne lo mejor del mundo trailero en México en un solo día.
-            </p>
-          </motion.div>
-        </div>
 
-        {/* Floating CTA Button */}
-        <motion.div 
-          className="absolute z-30 right-10 lg:right-32 top-1/2 mt-10"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.5, type: "spring" }}
-        >
-          <Button className="bg-[#abdfec] hover:bg-[#8ecee1] text-gray-800 rounded-full pl-6 pr-2 py-6 text-sm font-bold shadow-xl flex items-center gap-4">
-            Experience now
-            <span className="bg-white p-2 rounded-full">
-               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
-            </span>
-          </Button>
-        </motion.div>
-
-
-
-        {/* Glassmorphism Circle */}
-        <motion.div 
-          className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 mt-16 w-32 h-32 md:w-40 md:h-40 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center shadow-2xl"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <span className="text-white font-bold tracking-widest text-lg">TF20 - XX</span>
-        </motion.div>
       </section>
 
       {/* Features Section */}
