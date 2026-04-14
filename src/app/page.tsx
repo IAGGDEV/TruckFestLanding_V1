@@ -108,6 +108,76 @@ export default function Home() {
           />
         </div>
 
+        {/* Sponsors Section */}
+        <div className="mt-24 max-w-6xl mx-auto px-4">
+          <p className="text-center text-[#c5a977]/50 uppercase tracking-[0.3em] text-xs font-bold mb-10">Marcas que hacen posible el evento</p>
+          
+          {/* Main Sponsor */}
+          <div className="flex justify-center mb-10">
+            <div className="border border-[#c5a977] bg-[#0a0a0a] rounded-2xl px-10 py-6 text-center group hover:bg-[#c5a977]/5 transition-colors">
+              <div className="text-3xl font-black text-[#c5a977] tracking-tight leading-none">Mobil Delvac™</div>
+              <div className="text-[0.65rem] uppercase tracking-widest text-[#c5a977]/60 mt-1 font-bold">100 Years · Since 1925 · Patrocinador Principal</div>
+            </div>
+          </div>
+
+          {/* Secondary Sponsors Row 1 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+            {[
+              { name: "Santinel Racing", sub: "Racing" },
+              { name: "TCC Logistics", sub: "Logistics" },
+              { name: "Grupo Forza", sub: "GF" },
+            ].map((s) => (
+              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="md" />
+            ))}
+          </div>
+
+          {/* Sponsors Row 2 */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+            {[
+              { name: "Negritos de la 57", sub: "" },
+              { name: "Autotanques Servin", sub: "Especializados" },
+              { name: "PePes Chrome Shop", sub: "" },
+              { name: "CJ² Concretos", sub: "" },
+            ].map((s) => (
+              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="sm" />
+            ))}
+          </div>
+
+          {/* Sponsors Row 3 */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+            {[
+              { name: "Hammer Blocks", sub: "" },
+              { name: "Taris", sub: "Construyendo tu Futuro" },
+              { name: "SM Transportes", sub: "" },
+              { name: "8W Enpress Sinaloa", sub: "" },
+            ].map((s) => (
+              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="sm" />
+            ))}
+          </div>
+
+          {/* Sponsors Row 4 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
+            {[
+              { name: "Licencias Federales", sub: "GPO Corver" },
+              { name: "Durán", sub: "" },
+              { name: "Gorras y Escalas", sub: "Cies El Chaparro" },
+            ].map((s) => (
+              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="sm" />
+            ))}
+          </div>
+
+          {/* Sponsors Row 5 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {[
+              { name: "Yokohama", sub: "" },
+              { name: "Grupo Turbo", sub: "Líderes de México" },
+              { name: "Truck Caps", sub: "Born on the Road · Chucho Cachuchas" },
+            ].map((s) => (
+              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="sm" />
+            ))}
+          </div>
+        </div>
+
         <div className="mt-32 max-w-5xl mx-auto bg-[#0a0a0a] text-[#c5a977] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl border border-[#c5a977]">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#c5a977]/10 to-transparent z-0"></div>
           <div className="relative z-10 mt-4 rounded-3xl">
@@ -161,6 +231,24 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode, titl
       </div>
       <h3 className="text-xl font-bold text-[#c5a977] mb-3 leading-tight">{title}</h3>
       <p className="text-white/90 text-sm font-medium">{description}</p>
+    </motion.div>
+  );
+}
+
+function SponsorCard({ name, sub, size = "sm" }: { name: string; sub: string; size?: "md" | "sm" }) {
+  return (
+    <motion.div
+      className="bg-[#0a0a0a] border border-[#c5a977]/30 hover:border-[#c5a977] rounded-2xl flex flex-col items-center justify-center text-center px-4 py-5 transition-all duration-300 hover:bg-[#c5a977]/5 group"
+      whileHover={{ y: -3 }}
+    >
+      <div className={`font-black text-[#c5a977] tracking-tight leading-none group-hover:text-[#d4bc8a] transition-colors ${size === "md" ? "text-xl md:text-2xl" : "text-base md:text-lg"}`}>
+        {name}
+      </div>
+      {sub && (
+        <div className="text-[0.6rem] uppercase tracking-widest text-white/40 mt-1.5 font-bold">
+          {sub}
+        </div>
+      )}
     </motion.div>
   );
 }
