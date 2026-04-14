@@ -159,13 +159,13 @@ export default function Home() {
           {/* Tier 2 – 3 cols */}
           <div className="grid grid-cols-3 gap-4 mb-4">
             <SponsorLogo index={2} cardH={110} />
-            <SponsorLogo index={3} cardH={110} />
-            <SponsorLogo index={4} cardH={110} />
+            <SponsorLogo index={3} cardH={110} src="/logo-3.png" />
+            <SponsorLogo index={4} cardH={110} src="/logo-4.png" />
           </div>
 
           {/* Tier 3 – 2→3 cols */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            <SponsorLogo index={5}  cardH={100} />
+            <SponsorLogo index={5}  cardH={100} src="/logo-5.png" />
             <SponsorLogo index={6}  cardH={100} />
             <SponsorLogo index={7}  cardH={100} />
             <SponsorLogo index={8}  cardH={100} />
