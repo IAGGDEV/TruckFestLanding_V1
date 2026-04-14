@@ -173,11 +173,11 @@ export default function Home() {
             <SponsorLogo index={10} cardH={100} src="/logo-10.png" />
             <SponsorLogo index={11} cardH={100} src="/logo-11.png" />
             <SponsorLogo index={12} cardH={100} src="/logo-12.png" />
-            <SponsorLogo index={13} cardH={100} />
-            <SponsorLogo index={14} cardH={100} />
-            <SponsorLogo index={15} cardH={100} />
-            <SponsorLogo index={16} cardH={100} />
-            <SponsorLogo index={17} cardH={100} />
+            <SponsorLogo index={13} cardH={100} src="/logo-13.png" />
+            <SponsorLogo index={14} cardH={100} src="/logo-14.png" />
+            <SponsorLogo index={15} cardH={100} src="/logo-15.png" />
+            <SponsorLogo index={16} cardH={100} src="/logo-16.png" />
+            <SponsorLogo index={17} cardH={100} src="/logo-17.png" />
             <SponsorLogo index={18} cardH={100} />
             <SponsorLogo index={19} cardH={100} />
           </div>
