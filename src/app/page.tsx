@@ -5,46 +5,7 @@ import { motion } from "framer-motion";
 import { Flame, Truck, Handshake, Star } from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
 
-// ─── Sponsor sprite data ─────────────────────────────────────────────────────
-// Image dimensions (sponsors.jpg): ~770 × 1050 px
-const IMG_W = 770;
-const IMG_H = 1050;
-
-type Crop = { x: number; y: number; w: number; h: number };
-
-const SPONSORS: { id: string; tier: 1 | 2 | 3; crop: Crop }[] = [
-  // Row 1 – main sponsor (full width, two halves combined)
-  { id: "mobil-delvac",   tier: 1, crop: { x: 0,   y: 0,   w: 770, h: 210 } },
-  // Row 2 – tier 2
-  { id: "santinel",       tier: 2, crop: { x: 0,   y: 215, w: 250, h: 175 } },
-  { id: "tcc",            tier: 2, crop: { x: 250, y: 215, w: 260, h: 175 } },
-  { id: "grupo-forza",    tier: 2, crop: { x: 510, y: 215, w: 260, h: 175 } },
-  // Row 3 – tier 3
-  { id: "negritos",       tier: 3, crop: { x: 0,   y: 390, w: 230, h: 235 } },
-  { id: "autotanques",    tier: 3, crop: { x: 230, y: 390, w: 280, h: 120 } },
-  { id: "pepes",          tier: 3, crop: { x: 510, y: 390, w: 260, h: 120 } },
-  { id: "cj2",            tier: 3, crop: { x: 230, y: 510, w: 280, h: 115 } },
-  { id: "hammer",         tier: 3, crop: { x: 510, y: 510, w: 260, h: 115 } },
-  // Row 4 – tier 3
-  { id: "taris",          tier: 3, crop: { x: 0,   y: 625, w: 250, h: 135 } },
-  { id: "sm",             tier: 3, crop: { x: 250, y: 625, w: 260, h: 135 } },
-  { id: "8w",             tier: 3, crop: { x: 510, y: 625, w: 260, h: 135 } },
-  // Row 5 – tier 3
-  { id: "licencias",      tier: 3, crop: { x: 0,   y: 760, w: 250, h: 130 } },
-  { id: "duran",          tier: 3, crop: { x: 250, y: 760, w: 260, h: 130 } },
-  { id: "gorras",         tier: 3, crop: { x: 510, y: 760, w: 260, h: 130 } },
-  // Row 6 – tier 3
-  { id: "yokohama",       tier: 3, crop: { x: 0,   y: 890, w: 250, h: 160 } },
-  { id: "grupo-turbo",    tier: 3, crop: { x: 250, y: 890, w: 260, h: 160 } },
-  { id: "truck-caps",     tier: 3, crop: { x: 510, y: 890, w: 260, h: 160 } },
-];
-
-// ─── Main Page ───────────────────────────────────────────────────────────────
 export default function Home() {
-  const mainSponsor   = SPONSORS.filter(s => s.tier === 1);
-  const tier2Sponsors = SPONSORS.filter(s => s.tier === 2);
-  const tier3Sponsors = SPONSORS.filter(s => s.tier === 3);
-
   return (
     <main className="min-h-screen bg-white">
       {/* Header bar strictly for Timer */}
@@ -115,16 +76,7 @@ export default function Home() {
         {/* 6 Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
           <FeatureCard
-            icon={
-              <svg viewBox="0 0 56 26" className="w-12 h-6" fill="#c5a977">
-                <rect x="0"  y="5"  width="32" height="16" rx="2.5"/>
-                <rect x="32" y="9"  width="16" height="12" rx="2"/>
-                <rect x="47" y="11" width="6"  height="5"  rx="1" opacity="0.6"/>
-                <circle cx="8"  cy="23" r="3"/>
-                <circle cx="22" cy="23" r="3"/>
-                <circle cx="42" cy="23" r="3"/>
-              </svg>
-            }
+            icon={<Truck className="w-10 h-10 text-[#c5a977]" />}
             title="Arrancones de alto nivel"
             description="Con campeones nacionales y estrellas. Tráilers, corredores y portables reconocidos que ya son referencia en la pista."
           />
@@ -201,23 +153,33 @@ export default function Home() {
 
           {/* Tier 1 – Main sponsor full-width */}
           <div className="flex justify-center mb-6">
-            {mainSponsor.map(s => (
-              <SponsorLogo key={s.id} crop={s.crop} cardW={460} cardH={130} />
-            ))}
+            <SponsorLogo index={1} cardH={130} />
           </div>
 
           {/* Tier 2 – 3 cols */}
           <div className="grid grid-cols-3 gap-4 mb-4">
-            {tier2Sponsors.map(s => (
-              <SponsorLogo key={s.id} crop={s.crop} cardW={220} cardH={110} />
-            ))}
+            <SponsorLogo index={2} cardH={110} />
+            <SponsorLogo index={3} cardH={110} />
+            <SponsorLogo index={4} cardH={110} />
           </div>
 
-          {/* Tier 3 – responsive 2→3 cols */}
+          {/* Tier 3 – 2→3 cols */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {tier3Sponsors.map(s => (
-              <SponsorLogo key={s.id} crop={s.crop} cardW={220} cardH={100} />
-            ))}
+            <SponsorLogo index={5}  cardH={100} />
+            <SponsorLogo index={6}  cardH={100} />
+            <SponsorLogo index={7}  cardH={100} />
+            <SponsorLogo index={8}  cardH={100} />
+            <SponsorLogo index={9}  cardH={100} />
+            <SponsorLogo index={10} cardH={100} />
+            <SponsorLogo index={11} cardH={100} />
+            <SponsorLogo index={12} cardH={100} />
+            <SponsorLogo index={13} cardH={100} />
+            <SponsorLogo index={14} cardH={100} />
+            <SponsorLogo index={15} cardH={100} />
+            <SponsorLogo index={16} cardH={100} />
+            <SponsorLogo index={17} cardH={100} />
+            <SponsorLogo index={18} cardH={100} />
+            <SponsorLogo index={19} cardH={100} />
           </div>
         </div>
 
@@ -243,24 +205,14 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
   );
 }
 
-function SponsorLogo({ crop, cardW, cardH }: { crop: Crop; cardW: number; cardH: number }) {
-  const bgSizeX = Math.round((IMG_W / crop.w) * cardW);
-  const bgSizeY = Math.round((IMG_H / crop.h) * cardH);
-  const bgPosX  = Math.round(-(crop.x / crop.w) * cardW);
-  const bgPosY  = Math.round(-(crop.y / crop.h) * cardH);
-
+function SponsorLogo({ index, cardH }: { index: number; cardH: number }) {
   return (
     <motion.div
-      className="rounded-2xl overflow-hidden border border-[#c5a977]/30 hover:border-[#c5a977] transition-colors cursor-default"
-      style={{
-        width: "100%",
-        height: cardH,
-        backgroundImage: "url('/sponsors.jpg')",
-        backgroundSize:     `${bgSizeX}px ${bgSizeY}px`,
-        backgroundPosition: `${bgPosX}px ${bgPosY}px`,
-        backgroundRepeat:   "no-repeat",
-      }}
+      className="rounded-2xl overflow-hidden border border-[#c5a977]/30 hover:border-[#c5a977] transition-colors flex items-center justify-center"
+      style={{ height: cardH, width: '100%' }}
       whileHover={{ scale: 1.02 }}
-    />
+    >
+      <span className="text-[#c5a977]/20 text-xs font-bold uppercase tracking-widest">#{index}</span>
+    </motion.div>
   );
 }

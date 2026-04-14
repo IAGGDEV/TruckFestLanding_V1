@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Truck } from "lucide-react";
 
 const TARGET_DATE = new Date("2026-04-26T10:00:00").getTime();
 
@@ -54,21 +55,14 @@ export function CountdownTimer() {
       </div>
       <div className="flex items-center gap-2 text-[#c5a977] text-[0.7rem] font-bold uppercase tracking-wider">
         <span>El Truck Fest está por llegar</span>
-        {/* Speed lines + trailer */}
-        <span className="flex items-center gap-0.5">
-          <span className="flex flex-col gap-[2px]">
-            <span className="block w-3 h-[1.5px] bg-[#c5a977]/60 rounded-full"></span>
-            <span className="block w-4 h-[1.5px] bg-[#c5a977]/40 rounded-full"></span>
-            <span className="block w-2 h-[1.5px] bg-[#c5a977]/30 rounded-full"></span>
+        <span className="flex items-center gap-0.5 ml-1">
+          <span className="text-base">🔥</span>
+          <span className="flex flex-col gap-[2px] mx-0.5">
+            <span className="block w-4 h-[1.5px] bg-[#c5a977]/70 rounded-full"></span>
+            <span className="block w-3 h-[1.5px] bg-[#c5a977]/45 rounded-full"></span>
+            <span className="block w-2 h-[1.5px] bg-[#c5a977]/25 rounded-full"></span>
           </span>
-          <svg viewBox="0 0 56 26" className="w-10 h-5" fill="#c5a977" style={{ transform: 'scaleX(-1)' }}>
-            <rect x="0"  y="5"  width="32" height="16" rx="2.5"/>
-            <rect x="32" y="9"  width="16" height="12" rx="2"/>
-            <rect x="47" y="11" width="6"  height="5"  rx="1" opacity="0.6"/>
-            <circle cx="8"  cy="23" r="3"/>
-            <circle cx="22" cy="23" r="3"/>
-            <circle cx="42" cy="23" r="3"/>
-          </svg>
+          <Truck className="w-5 h-5 text-[#c5a977]" />
         </span>
       </div>
     </motion.div>
