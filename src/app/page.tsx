@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+
 
 import { CountdownTimer } from "@/components/CountdownTimer";
 
@@ -10,22 +10,13 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Navbar segment */}
-      <nav className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto bg-white z-50">
-        <div className="font-heading text-2xl tracking-tighter text-black uppercase">
+      <nav className="relative flex items-center justify-between px-4 md:px-8 py-6 w-full max-w-7xl mx-auto bg-white z-50 h-24 md:h-32">
+        <div className="w-1/3 hidden md:block"></div>
+        <div className="absolute left-1/2 -translate-x-1/2 font-heading text-3xl md:text-6xl tracking-tighter text-black uppercase whitespace-nowrap text-center">
           TRUCKFEST 2026
         </div>
-        <div className="hidden md:flex space-x-8 font-medium text-sm text-gray-800">
-          <a href="#" className="hover:text-orange-500 transition-colors">Home</a>
-          <a href="#" className="hover:text-orange-500 transition-colors">About</a>
-          <a href="#" className="hover:text-orange-500 transition-colors">Tickets</a>
-          <a href="#" className="hover:text-orange-500 transition-colors">Mission</a>
-          <a href="#" className="hover:text-orange-500 transition-colors">Process</a>
-        </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-end w-full md:w-1/3 z-10 sm:mt-12 md:mt-0">
           <CountdownTimer />
-          <Button className="bg-[#f07b5a] hover:bg-[#d96645] text-white font-semibold rounded-none px-6 py-6 shadow-md transition-all">
-            Join Now
-          </Button>
         </div>
       </nav>
 
@@ -43,13 +34,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
         
-        {/* Torn paper effect at the bottom using an SVG mask/clip-path equivalent */}
-        <div 
-          className="absolute bottom-0 left-0 w-full h-32 bg-white z-20"
-          style={{
-            clipPath: 'polygon(0% 100%, 100% 100%, 100% 80%, 95% 70%, 90% 75%, 85% 65%, 80% 70%, 75% 60%, 70% 65%, 65% 55%, 60% 60%, 55% 50%, 50% 65%, 45% 55%, 40% 65%, 35% 50%, 30% 60%, 25% 45%, 20% 55%, 15% 45%, 10% 55%, 5% 40%, 0% 55%)'
-          }}
-        />
+
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-4 mt-8">
           <motion.p 
