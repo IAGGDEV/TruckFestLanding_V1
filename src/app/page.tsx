@@ -3,15 +3,16 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MapPin, Globe, Fuel } from "lucide-react";
+
+import { CountdownTimer } from "@/components/CountdownTimer";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Navbar segment */}
       <nav className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto bg-white z-50">
-        <div className="font-extrabold text-2xl tracking-tighter text-black">
-          TRUCKFEST
+        <div className="font-heading text-2xl tracking-tighter text-black uppercase">
+          TRUCKFEST 2026
         </div>
         <div className="hidden md:flex space-x-8 font-medium text-sm text-gray-800">
           <a href="#" className="hover:text-orange-500 transition-colors">Home</a>
@@ -20,7 +21,8 @@ export default function Home() {
           <a href="#" className="hover:text-orange-500 transition-colors">Mission</a>
           <a href="#" className="hover:text-orange-500 transition-colors">Process</a>
         </div>
-        <div>
+        <div className="flex items-center gap-4">
+          <CountdownTimer />
           <Button className="bg-[#f07b5a] hover:bg-[#d96645] text-white font-semibold rounded-none px-6 py-6 shadow-md transition-all">
             Join Now
           </Button>
@@ -40,33 +42,37 @@ export default function Home() {
           }}
         />
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 mt-8">
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 mt-8">
           <motion.p 
-            className="text-sm font-medium text-white/90 uppercase tracking-widest mb-4"
+            className="text-lg md:text-xl font-bold text-white/90 uppercase tracking-[0.2em] mb-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Get your pre-sale tickets today
+            Gran Premio Móvil Delvac
           </motion.p>
           <motion.h1 
-            className="text-6xl md:text-8xl font-black text-white leading-[1.1] tracking-tight drop-shadow-lg"
+            className="text-7xl md:text-[9rem] font-heading text-white leading-[0.9] tracking-tighter drop-shadow-2xl uppercase"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Make your rally <br /> more exciting
+            TRUCK FEST <br /> 2026
           </motion.h1>
           
-          <motion.p 
-            className="text-white/80 max-w-sm text-left absolute top-48 left-0 hidden lg:block text-sm font-medium"
+          <motion.div 
+            className="text-white/90 backdrop-blur-sm bg-black/20 p-6 rounded-2xl border border-white/10 max-w-lg text-left absolute top-48 left-0 hidden lg:block text-sm font-medium shadow-2xl"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Experience the most thrilling truck racing event of the year. 
-            Join thousands of enthusiasts worldwide.
-          </motion.p>
+            <p className="flex items-center gap-2 mb-2"><span className="text-xl">📅</span> Domingo 26 de abril</p>
+            <p className="flex items-center gap-2 mb-2"><span className="text-xl">🕙</span> A partir de las 10:00 a.m.</p>
+            <p className="flex items-center gap-2 mb-4"><span className="text-xl">📍</span> Centro Dinámico Pegaso Toluca MX</p>
+            <p className="text-white/80 leading-relaxed font-bold">
+              El Truck Fest 2026 es el punto donde se reúne lo mejor del mundo trailero en México en un solo día.
+            </p>
+          </motion.div>
         </div>
 
         {/* Floating CTA Button */}
@@ -112,36 +118,81 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="relative z-30 bg-white py-24 px-4 w-full">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-[#2e1f1a] mb-4 tracking-tighter">
-            Extra features you <br /> will experience
+      <section className="relative z-30 bg-white pt-32 pb-24 px-4 w-full">
+        <div className="max-w-4xl mx-auto text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-heading text-[#2e1f1a] mb-6 tracking-tighter uppercase leading-[0.9]">
+            Lo que vas a <br /> vivir
           </h2>
-          <p className="text-gray-500 font-medium max-w-2xl mx-auto">
-            Discover a world of adrenaline, highly customized trucks and non-stop action.
-            Get ready to experience the ultimate festival customized for true motor lovers.
+          <p className="text-gray-600 font-medium max-w-2xl mx-auto text-lg">
+            No es solo una expo… es una experiencia completa donde el poder, el diseño y la competencia se viven en tiempo real.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
           <FeatureCard 
-            icon={<MapPin className="w-10 h-10 text-[#f07b5a]" />}
-            title="Find the track easily"
-            description="Our interactive maps guide you straight to the best viewing spots and paddocks."
+            icon={<span className="text-4xl">🏁</span>}
+            title="Arrancones de alto nivel"
+            description="Con campeones nacionales y estrellas. Tráilers, corredores y portables reconocidos que ya son referencia en la pista."
             bgColor="bg-[#eaf8fb]"
           />
           <FeatureCard 
-            icon={<Globe className="w-10 h-10 text-[#43a1c8]" />}
-            title="Set your desired location"
-            description="Access exclusive camping zones, VIP areas and live stages across the desert."
+            icon={<span className="text-4xl">🔥</span>}
+            title="Caravana de arranque"
+            description="El convoy que marca el inicio del evento y prende el ambiente desde el primer momento."
             bgColor="bg-[#fff9ea]"
           />
           <FeatureCard 
-            icon={<Fuel className="w-10 h-10 text-[#ec555a]" />}
-            title="Find nearest amenities"
-            description="Locate food trucks, merchandise, and rest areas dynamically around the venue."
+            icon={<span className="text-4xl">🚛</span>}
+            title="Exhibición masiva"
+            description="Más de 350 unidades, desde máquinas clásicas hasta builds extremos totalmente personalizados."
             bgColor="bg-[#eefbee]"
           />
+          <FeatureCard 
+            icon={<span className="text-4xl">🎤</span>}
+            title="Música en vivo"
+            description="Ambiente activo durante todo el día para disfrutar en familia o con los amigos."
+            bgColor="bg-[#fcedf3]"
+          />
+          <FeatureCard 
+            icon={<span className="text-4xl">🤝</span>}
+            title="Marcas de la industria"
+            description="Empresas clave del sector presentes con experiencias, productos y dinámicas."
+            bgColor="bg-[#fdf4e9]"
+          />
+          <FeatureCard 
+            icon={<span className="text-4xl">⭐</span>}
+            title="Invitados especiales"
+            description="Referentes del gremio y nuevas figuras que están marcando tendencia en el transporte."
+            bgColor="bg-[#eef0fc]"
+          />
+        </div>
+
+        <div className="mt-32 max-w-5xl mx-auto bg-black text-white rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#c66c3c]/20 to-transparent z-0"></div>
+          <div className="relative z-10 mt-4 rounded-3xl">
+            <h2 className="text-4xl md:text-6xl font-heading mb-8 uppercase text-center leading-[0.9]">Un evento con escala real</h2>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-12 font-bold text-xl md:text-2xl mb-12">
+              <div className="text-[#f07b5a]">350+ <span className="text-white block text-sm font-medium mt-1">Unidades</span></div>
+              <div className="text-[#3ba2cd]">50+ <span className="text-white block text-sm font-medium mt-1">En competencia</span></div>
+              <div className="text-[#abdfec]">100% <span className="text-white block text-sm font-medium mt-1">Nacional e Internacional</span></div>
+            </div>
+            <p className="text-2xl md:text-3xl font-medium text-white/90">
+              No existe otra experiencia en México a este nivel dentro del mundo trailero. 
+            </p>
+            <p className="text-xl md:text-2xl mt-4 font-bold text-[#f07b5a]">Si te gusta este mundo… aquí es donde tienes que estar.</p>
+            
+            <div className="mt-16 pt-16 border-t border-white/20 text-left md:text-center grid grid-cols-1 md:grid-cols-2 gap-8 text-white/70">
+              <div className="text-sm">
+                <span className="block text-white font-bold mb-2 uppercase tracking-widest text-xs">Acceso</span>
+                La compra de boletos es directamente en el Centro Dinámico Pegaso, te recomendamos llegar con anticipación o con la caravana.
+              </div>
+              <div className="text-sm">
+                <span className="block text-white font-bold mb-2 uppercase tracking-widest text-xs">Presentado por</span>
+                Kilómetro Cero — El movimiento musical más viral del momento en la industria del transporte.<br/>
+                Nirvania — AI Agency.
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
