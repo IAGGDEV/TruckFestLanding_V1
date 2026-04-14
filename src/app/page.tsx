@@ -117,9 +117,20 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#c5a977]/10 to-transparent z-0"></div>
           <div className="relative z-10 mt-4 rounded-3xl">
             <h2 className="text-4xl md:text-6xl font-heading mb-8 uppercase text-center leading-[0.9] text-[#c5a977]">Un evento con escala real</h2>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-12 font-bold text-xl md:text-2xl mb-12">
-              <div className="text-white">350+ <span className="text-white/70 block text-sm font-medium mt-1">Unidades</span></div>
-              <div className="text-white">50+ <span className="text-white/70 block text-sm font-medium mt-1">En competencia</span></div>
+            
+            <div className="relative w-full aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden mb-8 border border-[#c5a977]/30 shadow-xl">
+              <Image 
+                src="/escala-real.jpg" 
+                alt="Evento con escala real" 
+                fill 
+                className="object-cover object-center"
+              />
+            </div>
+
+            <div className="inline-flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12 font-bold text-xl md:text-2xl mb-12 border-2 border-[#c5a977]/60 rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md p-6 md:px-12 bg-black/60 shadow-lg">
+              <div className="text-white text-center">350+ <span className="text-[#c5a977] block text-xs md:text-sm font-medium mt-1 uppercase tracking-widest">Unidades</span></div>
+              <div className="w-12 h-[2px] sm:w-[2px] sm:h-12 bg-[#c5a977]/30"></div>
+              <div className="text-white text-center">50+ <span className="text-[#c5a977] block text-xs md:text-sm font-medium mt-1 uppercase tracking-widest">En competencia</span></div>
             </div>
             <p className="text-2xl md:text-3xl font-medium text-white/90">
               No existe otra experiencia en México a este nivel dentro del mundo trailero.
