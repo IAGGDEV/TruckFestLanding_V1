@@ -126,7 +126,7 @@ export default function Home() {
               <div className="text-sm">
                 <span className="block text-[#c5a977] font-bold mb-2 uppercase tracking-widest text-xs">Presentado por</span>
                 Kilómetro Cero — El movimiento musical más viral del momento en la industria del transporte.<br/><br/>
-                Nirvania — AI Agency.
+                Nirvania — Agencia Consultora en Inteligencia Artificial.
               </div>
             </div>
           </div>
