@@ -50,19 +50,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="relative z-30 bg-white pt-32 pb-24 px-4 w-full">
+      {/* Intro & Video Section */}
+      <section className="relative z-30 bg-black pt-32 pb-16 px-4 w-full border-t-4 border-[#c5a977]">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="text-5xl md:text-7xl font-heading text-black mb-6 tracking-tighter uppercase leading-[0.9]">
+          <h2 className="text-5xl md:text-7xl font-heading text-white mb-6 tracking-tighter uppercase leading-[0.9]">
             Lo que vas a <br /> vivir
           </h2>
-          <p className="text-black/70 font-medium max-w-2xl mx-auto text-lg">
+          <p className="text-white/70 font-medium max-w-2xl mx-auto text-lg">
             No es solo una expo… es una experiencia completa donde el poder, el diseño y la competencia se viven en tiempo real.
           </p>
         </div>
 
-        <div className="flex justify-center w-full max-w-[320px] mx-auto mb-20">
-          <div className="relative w-full aspect-[9/16] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-8 border-black">
+        <div className="flex justify-center w-full max-w-[320px] mx-auto">
+          <div className="relative w-full aspect-[9/16] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(197,169,119,0.15)] border-8 border-[#111]">
             <iframe 
               src="https://www.youtube.com/embed/PGfRixPPGH0?autoplay=1&mute=1&loop=1&playlist=PGfRixPPGH0" 
               title="YouTube video player" 
@@ -72,7 +72,10 @@ export default function Home() {
             ></iframe>
           </div>
         </div>
+      </section>
 
+      {/* Features Grid Section */}
+      <section className="relative z-30 bg-white pt-24 pb-24 px-4 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
           <FeatureCard 
             icon={<span className="text-4xl">🏁</span>}
