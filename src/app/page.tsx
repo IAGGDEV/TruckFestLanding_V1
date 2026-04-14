@@ -101,21 +101,31 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-center items-center gap-12 font-bold text-xl md:text-2xl mb-12">
               <div className="text-[#c5a977]">350+ <span className="text-[#c5a977]/70 block text-sm font-medium mt-1">Unidades</span></div>
               <div className="text-[#c5a977]">50+ <span className="text-[#c5a977]/70 block text-sm font-medium mt-1">En competencia</span></div>
-              <div className="text-[#c5a977]">100% <span className="text-[#c5a977]/70 block text-sm font-medium mt-1">Nacional e Internacional</span></div>
             </div>
             <p className="text-2xl md:text-3xl font-medium text-[#c5a977]/90">
               No existe otra experiencia en México a este nivel dentro del mundo trailero. 
             </p>
             <p className="text-xl md:text-2xl mt-4 font-bold text-[#c5a977] opacity-80">Si te gusta este mundo… aquí es donde tienes que estar.</p>
             
-            <div className="mt-16 pt-16 border-t border-[#c5a977]/20 text-left md:text-center grid grid-cols-1 md:grid-cols-2 gap-8 text-[#c5a977]/70">
+            <div className="mt-16 pt-16 border-t border-[#c5a977]/20 text-left md:text-center grid grid-cols-1 md:grid-cols-2 gap-8 text-[#c5a977]/70 flex items-center">
               <div className="text-sm">
                 <span className="block text-[#c5a977] font-bold mb-2 uppercase tracking-widest text-xs">Acceso</span>
                 La compra de boletos es directamente en el Centro Dinámico Pegaso, te recomendamos llegar con anticipación o con la caravana.
+                
+                <div className="flex gap-4 mt-6 justify-start md:justify-center">
+                  <div className="border border-[#c5a977]/30 bg-[#111] rounded-2xl px-6 py-4 flex-1 shadow-lg hover:border-[#c5a977] transition-colors">
+                    <div className="text-3xl font-heading text-[#c5a977] leading-none mb-1">$350</div>
+                    <div className="uppercase tracking-widest text-[0.65rem] opacity-80 font-bold">Adultos</div>
+                  </div>
+                  <div className="border border-[#c5a977]/30 bg-[#111] rounded-2xl px-6 py-4 flex-1 shadow-lg hover:border-[#c5a977] transition-colors">
+                    <div className="text-3xl font-heading text-[#c5a977] leading-none mb-1">$100</div>
+                    <div className="uppercase tracking-widest text-[0.65rem] opacity-80 font-bold">Niños</div>
+                  </div>
+                </div>
               </div>
               <div className="text-sm">
                 <span className="block text-[#c5a977] font-bold mb-2 uppercase tracking-widest text-xs">Presentado por</span>
-                Kilómetro Cero — El movimiento musical más viral del momento en la industria del transporte.<br/>
+                Kilómetro Cero — El movimiento musical más viral del momento en la industria del transporte.<br/><br/>
                 Nirvania — AI Agency.
               </div>
             </div>
