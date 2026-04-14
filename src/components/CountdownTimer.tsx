@@ -38,18 +38,23 @@ export function CountdownTimer() {
   if (!mounted) return <div className="h-[40px] w-[200px]" />; // Skeleton placeholder for layout shift
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex items-center space-x-1.5 bg-black/80 px-5 py-2.5 rounded-2xl border border-white/20 shadow-[0_0_15px_rgba(240,123,90,0.3)] backdrop-blur-md"
+      className="flex flex-col items-center gap-1.5"
     >
-      <TimeUnit value={timeLeft.days} label="d" accent />
-      <span className="text-white/50 text-2xl font-black mb-3">:</span>
-      <TimeUnit value={timeLeft.hours} label="h" />
-      <span className="text-white/50 text-2xl font-black mb-3">:</span>
-      <TimeUnit value={timeLeft.minutes} label="m" />
-      <span className="text-white/50 text-2xl font-black mb-3">:</span>
-      <TimeUnit value={timeLeft.seconds} label="s" />
+      <div className="flex items-center space-x-1.5 bg-black/80 px-5 py-2.5 rounded-2xl border border-[#c5a977]/30 shadow-[0_0_20px_rgba(197,169,119,0.2)] backdrop-blur-md">
+        <TimeUnit value={timeLeft.days} label="d" accent />
+        <span className="text-white/50 text-2xl font-black mb-3">:</span>
+        <TimeUnit value={timeLeft.hours} label="h" />
+        <span className="text-white/50 text-2xl font-black mb-3">:</span>
+        <TimeUnit value={timeLeft.minutes} label="m" />
+        <span className="text-white/50 text-2xl font-black mb-3">:</span>
+        <TimeUnit value={timeLeft.seconds} label="s" />
+      </div>
+      <span className="text-[0.65rem] font-bold uppercase tracking-widest text-[#c5a977]/80 flex items-center gap-1">
+        🚛 El Truck Fest está por llegar
+      </span>
     </motion.div>
   );
 }
@@ -57,7 +62,7 @@ export function CountdownTimer() {
 function TimeUnit({ value, label, accent = false }: { value: number; label: string; accent?: boolean }) {
   return (
     <div className="flex flex-col items-center justify-center min-w-[36px]">
-      <span className={`text-3xl font-black tracking-tighter tabular-nums leading-none ${accent ? 'text-[#f07b5a]' : 'text-white'}`}>
+      <span className={`text-3xl font-black tracking-tighter tabular-nums leading-none ${accent ? 'text-[#c5a977]' : 'text-white'}`}>
         {value.toString().padStart(2, '0')}
       </span>
       <span className="text-[0.6rem] font-bold uppercase text-white/50 mt-1">

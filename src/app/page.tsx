@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Flag, Flame, Truck, Mic, Handshake, Star } from "lucide-react";
+import { ShoppingCart, Flame, Truck, Music2, Handshake, Star } from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
 
 export default function Home() {
@@ -77,7 +77,7 @@ export default function Home() {
       <section className="relative z-30 bg-black pt-24 pb-24 px-4 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
           <FeatureCard 
-            icon={<Flag className="w-10 h-10 text-[#c5a977]" />}
+            icon={<ShoppingCart className="w-10 h-10 text-[#c5a977]" />}
             title="Arrancones de alto nivel"
             description="Con campeones nacionales y estrellas. Tráilers, corredores y portables reconocidos que ya son referencia en la pista."
           />
@@ -92,7 +92,7 @@ export default function Home() {
             description="Más de 350 unidades, desde máquinas clásicas hasta builds extremos totalmente personalizados."
           />
           <FeatureCard 
-            icon={<Mic className="w-10 h-10 text-[#c5a977]" />}
+            icon={<Music2 className="w-10 h-10 text-[#c5a977]" />}
             title="Música en vivo"
             description="Ambiente activo durante todo el día para disfrutar en familia o con los amigos."
           />
@@ -142,6 +142,37 @@ export default function Home() {
                 Kilómetro Cero — El movimiento musical más viral del momento en la industria del transporte.<br/><br/>
                 Nirvania — Agencia Consultora en Inteligencia Artificial.
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors Section */}
+      <section className="relative z-30 bg-black pt-20 pb-24 px-4 w-full border-t border-[#c5a977]/20">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-[#c5a977] font-bold uppercase tracking-[0.3em] text-xs mb-12">
+            Evento patrocinado por
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {/* Sponsor: Mobil Delvac */}
+            <div className="flex flex-col items-center justify-center bg-[#0a0a0a] border border-[#c5a977]/30 hover:border-[#c5a977] rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,169,119,0.15)]">
+              <div className="text-white font-heading text-xl tracking-wider uppercase mb-1">Mobil</div>
+              <div className="text-[#c5a977] text-xs tracking-widest uppercase font-bold">Delvac™</div>
+            </div>
+            {/* Sponsor: Centro Dinámico Pegaso */}
+            <div className="flex flex-col items-center justify-center bg-[#0a0a0a] border border-[#c5a977]/30 hover:border-[#c5a977] rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,169,119,0.15)]">
+              <div className="text-white font-heading text-base tracking-wide uppercase leading-tight text-center">Centro Dinámico</div>
+              <div className="text-[#c5a977] text-xs tracking-widest uppercase font-bold mt-1">Pegaso</div>
+            </div>
+            {/* Sponsor: Kilómetro Cero */}
+            <div className="flex flex-col items-center justify-center bg-[#0a0a0a] border border-[#c5a977]/30 hover:border-[#c5a977] rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,169,119,0.15)]">
+              <div className="text-white font-heading text-base tracking-wide uppercase leading-tight text-center">Kilómetro</div>
+              <div className="text-[#c5a977] text-xs tracking-widest uppercase font-bold mt-1">Cero</div>
+            </div>
+            {/* Sponsor: Nirvania */}
+            <div className="flex flex-col items-center justify-center bg-[#0a0a0a] border border-[#c5a977]/30 hover:border-[#c5a977] rounded-2xl p-6 transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,169,119,0.15)]">
+              <div className="text-white font-heading text-xl tracking-wider uppercase mb-1">Nirvania</div>
+              <div className="text-[#c5a977] text-xs tracking-widest uppercase font-bold">AI Agency</div>
             </div>
           </div>
         </div>
