@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-
+import { Flag, Flame, Truck, Mic, Handshake, Star } from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
 
 export default function Home() {
@@ -75,41 +74,41 @@ export default function Home() {
       </section>
 
       {/* Features Grid Section */}
-      <section className="relative z-30 bg-white pt-24 pb-24 px-4 w-full">
+      <section className="relative z-30 bg-black pt-24 pb-24 px-4 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
           <FeatureCard 
-            icon={<span className="text-4xl">🏁</span>}
+            icon={<Flag className="w-10 h-10 text-[#c5a977]" />}
             title="Arrancones de alto nivel"
             description="Con campeones nacionales y estrellas. Tráilers, corredores y portables reconocidos que ya son referencia en la pista."
           />
           <FeatureCard 
-            icon={<span className="text-4xl">🔥</span>}
+            icon={<Flame className="w-10 h-10 text-[#c5a977]" />}
             title="Caravana de arranque"
             description="El convoy que marca el inicio del evento y prende el ambiente desde el primer momento."
           />
           <FeatureCard 
-            icon={<span className="text-4xl">🚛</span>}
+            icon={<Truck className="w-10 h-10 text-[#c5a977]" />}
             title="Exhibición masiva"
             description="Más de 350 unidades, desde máquinas clásicas hasta builds extremos totalmente personalizados."
           />
           <FeatureCard 
-            icon={<span className="text-4xl">🎤</span>}
+            icon={<Mic className="w-10 h-10 text-[#c5a977]" />}
             title="Música en vivo"
             description="Ambiente activo durante todo el día para disfrutar en familia o con los amigos."
           />
           <FeatureCard 
-            icon={<span className="text-4xl">🤝</span>}
+            icon={<Handshake className="w-10 h-10 text-[#c5a977]" />}
             title="Marcas de la industria"
             description="Empresas clave del sector presentes con experiencias, productos y dinámicas."
           />
           <FeatureCard 
-            icon={<span className="text-4xl">⭐</span>}
+            icon={<Star className="w-10 h-10 text-[#c5a977]" />}
             title="Invitados especiales"
             description="Referentes del gremio y nuevas figuras que están marcando tendencia en el transporte."
           />
         </div>
 
-        <div className="mt-32 max-w-5xl mx-auto bg-[#0a0a0a] text-[#c5a977] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl border border-[#c5a977]/20">
+        <div className="mt-32 max-w-5xl mx-auto bg-[#0a0a0a] text-[#c5a977] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl border border-[#c5a977]">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#c5a977]/10 to-transparent z-0"></div>
           <div className="relative z-10 mt-4 rounded-3xl">
             <h2 className="text-4xl md:text-6xl font-heading mb-8 uppercase text-center leading-[0.9] text-[#c5a977]">Un evento con escala real</h2>
@@ -154,14 +153,14 @@ export default function Home() {
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
   return (
     <motion.div 
-      className="bg-[#0a0a0a] rounded-3xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-xl hover:shadow-[#c5a977]/20 transition-all duration-300 border border-[#c5a977]/20 hover:border-[#c5a977]/50"
+      className="bg-[#0a0a0a] rounded-3xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-xl hover:shadow-[#c5a977]/20 transition-all duration-300 border border-[#c5a977]"
       whileHover={{ y: -5 }}
     >
       <div className="bg-[#c5a977]/10 w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-sm border border-[#c5a977]/20">
         {icon}
       </div>
       <h3 className="text-xl font-bold text-[#c5a977] mb-3 leading-tight">{title}</h3>
-      <p className="text-[#c5a977]/70 text-sm font-medium">{description}</p>
+      <p className="text-white/90 text-sm font-medium">{description}</p>
     </motion.div>
   );
 }
