@@ -153,7 +153,7 @@ export default function Home() {
 
           {/* Tier 1 – Main sponsor full-width */}
           <div className="flex justify-center mb-6">
-            <SponsorLogo index={1} cardH={130} />
+            <SponsorLogo index={1} cardH={130} src="/logo-1.png" />
           </div>
 
           {/* Tier 2 – 3 cols */}
@@ -205,14 +205,24 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
   );
 }
 
-function SponsorLogo({ index, cardH }: { index: number; cardH: number }) {
+function SponsorLogo({ index, cardH, src }: { index: number; cardH: number; src?: string }) {
   return (
     <motion.div
-      className="rounded-2xl overflow-hidden border border-[#c5a977]/30 hover:border-[#c5a977] transition-colors flex items-center justify-center"
+      className="rounded-2xl overflow-hidden border border-[#c5a977]/30 hover:border-[#c5a977] transition-colors flex items-center justify-center bg-[#0a0a0a]"
       style={{ height: cardH, width: '100%' }}
       whileHover={{ scale: 1.02 }}
     >
-      <span className="text-[#c5a977]/20 text-xs font-bold uppercase tracking-widest">#{index}</span>
+      {src ? (
+        <Image
+          src={src}
+          alt={`Patrocinador ${index}`}
+          width={460}
+          height={cardH}
+          className="w-full h-full object-contain p-3"
+        />
+      ) : (
+        <span className="text-[#c5a977]/20 text-xs font-bold uppercase tracking-widest">#{index}</span>
+      )}
     </motion.div>
   );
 }

@@ -56,7 +56,6 @@ export function CountdownTimer() {
       <div className="flex items-center gap-2 text-[#c5a977] text-[0.7rem] font-bold uppercase tracking-wider">
         <span>El Truck Fest está por llegar</span>
         <span className="flex items-center gap-0.5 ml-1">
-          <span className="text-base">🔥</span>
           <span className="flex flex-col gap-[2px] mx-0.5">
             <span className="block w-4 h-[1.5px] bg-[#c5a977]/70 rounded-full"></span>
             <span className="block w-3 h-[1.5px] bg-[#c5a977]/45 rounded-full"></span>
