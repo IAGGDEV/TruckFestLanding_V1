@@ -31,8 +31,17 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative w-full h-[85vh] overflow-hidden flex flex-col items-center pt-16">
-        {/* Background Gradient to emulate sky and desert */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3ba2cd] via-[#43a1c8] to-[#c66c3c] z-0" />
+        {/* Hero Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Truck Fest Hero Background"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
         
         {/* Torn paper effect at the bottom using an SVG mask/clip-path equivalent */}
         <div 
@@ -90,21 +99,7 @@ export default function Home() {
           </Button>
         </motion.div>
 
-        {/* Center Main Truck Image */}
-        <motion.div 
-           className="absolute bottom-10 z-10 w-full max-w-[1200px]"
-           initial={{ opacity: 0, y: 100 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <Image 
-            src="/hero-truck.png" 
-            alt="Truck Fest Hero" 
-            width={1200} 
-            height={600} 
-            className="object-contain w-full h-auto object-bottom mix-blend-normal drop-shadow-2xl scale-[1.1] origin-bottom mask-image-bottom"
-          />
-        </motion.div>
+
 
         {/* Glassmorphism Circle */}
         <motion.div 
