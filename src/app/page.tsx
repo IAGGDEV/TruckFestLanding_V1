@@ -118,15 +118,17 @@ export default function Home() {
           <div className="relative z-10 mt-4 rounded-3xl">
             <h2 className="text-4xl md:text-6xl font-heading mb-8 uppercase text-center leading-[0.9] text-[#c5a977]">Un evento con escala real</h2>
             
-            <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden mb-8 border border-[#c5a977]/30 shadow-xl">
+            <div className="relative w-full max-w-3xl mx-auto aspect-square rounded-2xl overflow-hidden mb-10 shadow-2xl">
               <Image 
                 src="/escala-real.jpg" 
                 alt="Evento con escala real" 
                 fill 
-                className="object-cover object-[center_70%]"
+                className="object-cover object-center"
               />
-              {/* Fade Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none"></div>
+              {/* Fade Overlay (Vignette to blend with background) */}
+              <div className="absolute inset-0 bg-[#0a0a0a]/20 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a] opacity-90 pointer-events-none"></div>
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none"></div>
             </div>
 
             <div className="inline-flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12 font-bold text-xl md:text-2xl mb-12 border-2 border-[#c5a977]/60 rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md p-6 md:px-12 bg-black/60 shadow-lg">
