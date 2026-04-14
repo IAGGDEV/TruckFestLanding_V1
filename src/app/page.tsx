@@ -53,7 +53,7 @@ export default function Home() {
             Lo que vas a <br /> vivir
           </h2>
           <p className="text-white/70 font-medium max-w-2xl mx-auto text-lg">
-            No es solo una expo… es una experiencia completa donde el poder, el diseño y la competencia se viven en tiempo real.
+            No es solo una expo… es una experiencia completa donde la belleza y la competencia del asfalto se viven en tiempo real.
           </p>
         </div>
 
