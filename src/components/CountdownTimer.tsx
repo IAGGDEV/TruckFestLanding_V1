@@ -61,7 +61,7 @@ export function CountdownTimer() {
             <span className="block w-4 h-[1.5px] bg-[#c5a977]/40 rounded-full"></span>
             <span className="block w-2 h-[1.5px] bg-[#c5a977]/30 rounded-full"></span>
           </span>
-          <svg viewBox="0 0 56 26" className="w-10 h-5" fill="#c5a977">
+          <svg viewBox="0 0 56 26" className="w-10 h-5" fill="#c5a977" style={{ transform: 'scaleX(-1)' }}>
             <rect x="0"  y="5"  width="32" height="16" rx="2.5"/>
             <rect x="32" y="9"  width="16" height="12" rx="2"/>
             <rect x="47" y="11" width="6"  height="5"  rx="1" opacity="0.6"/>

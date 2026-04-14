@@ -116,16 +116,13 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
           <FeatureCard
             icon={
-              // Modified trailer SVG facing right
-              <svg viewBox="0 0 64 32" className="w-14 h-7 text-[#c5a977]" fill="currentColor">
-                <rect x="2"  y="8"  width="36" height="18" rx="3" />
-                <rect x="38" y="12" width="18" height="14" rx="2" />
-                <rect x="54" y="14" width="6"  height="6"  rx="1" opacity="0.6"/>
-                <circle cx="10" cy="27" r="4" fill="#c5a977"/>
-                <circle cx="28" cy="27" r="4" fill="#c5a977"/>
-                <circle cx="48" cy="27" r="4" fill="#c5a977"/>
-                <line x1="0" y1="18" x2="2" y2="15" stroke="#c5a977" strokeWidth="1.5" opacity="0.5"/>
-                <line x1="0" y1="22" x2="2" y2="20" stroke="#c5a977" strokeWidth="1.5" opacity="0.3"/>
+              <svg viewBox="0 0 56 26" className="w-12 h-6" fill="#c5a977">
+                <rect x="0"  y="5"  width="32" height="16" rx="2.5"/>
+                <rect x="32" y="9"  width="16" height="12" rx="2"/>
+                <rect x="47" y="11" width="6"  height="5"  rx="1" opacity="0.6"/>
+                <circle cx="8"  cy="23" r="3"/>
+                <circle cx="22" cy="23" r="3"/>
+                <circle cx="42" cy="23" r="3"/>
               </svg>
             }
             title="Arrancones de alto nivel"
