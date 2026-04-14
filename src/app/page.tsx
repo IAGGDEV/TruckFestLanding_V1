@@ -32,12 +32,12 @@ export default function Home() {
 
         <div className="relative z-10 text-center w-full px-4 mix-blend-difference">
           <motion.p 
-            className="text-lg md:text-2xl font-bold text-white uppercase tracking-[0.3em] mb-4"
+            className="text-2xl md:text-4xl font-sans font-semibold text-white mb-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Gran Premio Móvil Delvac
+            Gran Premio Mobil Delvac&trade;
           </motion.p>
           <motion.h1 
             className="text-7xl md:text-[11rem] font-heading text-white leading-[0.8] tracking-tighter uppercase"
