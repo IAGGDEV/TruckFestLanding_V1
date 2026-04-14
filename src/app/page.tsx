@@ -178,8 +178,8 @@ export default function Home() {
             <SponsorLogo index={15} cardH={100} src="/logo-15.png" />
             <SponsorLogo index={16} cardH={100} src="/logo-16.png" />
             <SponsorLogo index={17} cardH={100} src="/logo-17.png" />
-            <SponsorLogo index={18} cardH={100} />
-            <SponsorLogo index={19} cardH={100} />
+            <SponsorLogo index={18} cardH={100} src="/logo-18.png" />
+            <SponsorLogo index={19} cardH={100} src="/logo-19.png" />
           </div>
         </div>
 
