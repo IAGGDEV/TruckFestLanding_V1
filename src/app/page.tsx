@@ -168,11 +168,11 @@ export default function Home() {
             <SponsorLogo index={5}  cardH={100} src="/logo-negritos.png" />
             <SponsorLogo index={6}  cardH={100} src="/logo-6.png" />
             <SponsorLogo index={7}  cardH={100} src="/logo-7.png" />
-            <SponsorLogo index={8}  cardH={100} />
-            <SponsorLogo index={9}  cardH={100} />
-            <SponsorLogo index={10} cardH={100} />
-            <SponsorLogo index={11} cardH={100} />
-            <SponsorLogo index={12} cardH={100} />
+            <SponsorLogo index={8}  cardH={100} src="/logo-8.png" />
+            <SponsorLogo index={9}  cardH={100} src="/logo-9.png" />
+            <SponsorLogo index={10} cardH={100} src="/logo-10.png" />
+            <SponsorLogo index={11} cardH={100} src="/logo-11.png" />
+            <SponsorLogo index={12} cardH={100} src="/logo-12.png" />
             <SponsorLogo index={13} cardH={100} />
             <SponsorLogo index={14} cardH={100} />
             <SponsorLogo index={15} cardH={100} />
