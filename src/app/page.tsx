@@ -8,13 +8,13 @@ import { CountdownTimer } from "@/components/CountdownTimer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Header bar strictly for Timer */}
-      <div className="absolute top-0 right-0 w-full flex justify-end px-4 md:px-8 py-6 z-50">
+      {/* Desktop-only Timer – top right */}
+      <div className="hidden md:flex absolute top-0 right-0 w-full justify-end px-8 py-6 z-50">
         <CountdownTimer />
       </div>
 
       {/* Hero Section */}
-      <section className="relative w-full h-[100svh] overflow-hidden flex flex-col items-center pt-24 md:pt-32">
+      <section className="relative w-full h-[100svh] overflow-hidden flex flex-col items-center pt-6 md:pt-32">
         <div className="absolute inset-0 z-0">
           <Image
             src="/hero-bg.jpg"
@@ -26,7 +26,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="relative z-10 text-center w-full px-4 mix-blend-difference">
+        {/* Mobile-only Timer – centered above title */}
+        <div className="md:hidden relative z-20 w-full flex justify-center pt-4 pb-2">
+          <CountdownTimer />
+        </div>
+
+        <div className="relative z-10 text-center w-full px-4 mix-blend-difference mt-2 md:mt-0">
           <motion.p
             className="text-2xl md:text-4xl font-sans font-semibold text-white mb-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
             initial={{ opacity: 0, y: 20 }}
