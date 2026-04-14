@@ -2,10 +2,49 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Flag, Flame, Truck, Mic, Handshake, Star } from "lucide-react";
+import { Flame, Truck, Handshake, Star } from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
 
+// ─── Sponsor sprite data ─────────────────────────────────────────────────────
+// Image dimensions (sponsors.jpg): ~770 × 1050 px
+const IMG_W = 770;
+const IMG_H = 1050;
+
+type Crop = { x: number; y: number; w: number; h: number };
+
+const SPONSORS: { id: string; tier: 1 | 2 | 3; crop: Crop }[] = [
+  // Row 1 – main sponsor (full width, two halves combined)
+  { id: "mobil-delvac",   tier: 1, crop: { x: 0,   y: 0,   w: 770, h: 210 } },
+  // Row 2 – tier 2
+  { id: "santinel",       tier: 2, crop: { x: 0,   y: 215, w: 250, h: 175 } },
+  { id: "tcc",            tier: 2, crop: { x: 250, y: 215, w: 260, h: 175 } },
+  { id: "grupo-forza",    tier: 2, crop: { x: 510, y: 215, w: 260, h: 175 } },
+  // Row 3 – tier 3
+  { id: "negritos",       tier: 3, crop: { x: 0,   y: 390, w: 230, h: 235 } },
+  { id: "autotanques",    tier: 3, crop: { x: 230, y: 390, w: 280, h: 120 } },
+  { id: "pepes",          tier: 3, crop: { x: 510, y: 390, w: 260, h: 120 } },
+  { id: "cj2",            tier: 3, crop: { x: 230, y: 510, w: 280, h: 115 } },
+  { id: "hammer",         tier: 3, crop: { x: 510, y: 510, w: 260, h: 115 } },
+  // Row 4 – tier 3
+  { id: "taris",          tier: 3, crop: { x: 0,   y: 625, w: 250, h: 135 } },
+  { id: "sm",             tier: 3, crop: { x: 250, y: 625, w: 260, h: 135 } },
+  { id: "8w",             tier: 3, crop: { x: 510, y: 625, w: 260, h: 135 } },
+  // Row 5 – tier 3
+  { id: "licencias",      tier: 3, crop: { x: 0,   y: 760, w: 250, h: 130 } },
+  { id: "duran",          tier: 3, crop: { x: 250, y: 760, w: 260, h: 130 } },
+  { id: "gorras",         tier: 3, crop: { x: 510, y: 760, w: 260, h: 130 } },
+  // Row 6 – tier 3
+  { id: "yokohama",       tier: 3, crop: { x: 0,   y: 890, w: 250, h: 160 } },
+  { id: "grupo-turbo",    tier: 3, crop: { x: 250, y: 890, w: 260, h: 160 } },
+  { id: "truck-caps",     tier: 3, crop: { x: 510, y: 890, w: 260, h: 160 } },
+];
+
+// ─── Main Page ───────────────────────────────────────────────────────────────
 export default function Home() {
+  const mainSponsor   = SPONSORS.filter(s => s.tier === 1);
+  const tier2Sponsors = SPONSORS.filter(s => s.tier === 2);
+  const tier3Sponsors = SPONSORS.filter(s => s.tier === 3);
+
   return (
     <main className="min-h-screen bg-white">
       {/* Header bar strictly for Timer */}
@@ -15,7 +54,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative w-full h-[100svh] overflow-hidden flex flex-col items-center pt-24 md:pt-32">
-        {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/hero-bg.jpg"
@@ -26,11 +64,9 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        
-
 
         <div className="relative z-10 text-center w-full px-4 mix-blend-difference">
-          <motion.p 
+          <motion.p
             className="text-2xl md:text-4xl font-sans font-semibold text-white mb-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,7 +74,7 @@ export default function Home() {
           >
             Gran Premio Mobil Delvac&trade;
           </motion.p>
-          <motion.h1 
+          <motion.h1
             className="text-7xl md:text-[11rem] font-heading text-white leading-[0.8] tracking-tighter uppercase"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,122 +98,67 @@ export default function Home() {
 
         <div className="flex justify-center w-full max-w-[320px] mx-auto">
           <div className="relative w-full aspect-[9/16] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(197,169,119,0.15)] border-8 border-[#111]">
-            <iframe 
-              src="https://www.youtube.com/embed/PGfRixPPGH0?autoplay=1&mute=1&loop=1&playlist=PGfRixPPGH0" 
-              title="YouTube video player" 
+            <iframe
+              src="https://www.youtube.com/embed/PGfRixPPGH0?autoplay=1&mute=1&loop=1&playlist=PGfRixPPGH0"
+              title="YouTube video player"
               className="absolute top-0 left-0 w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
         </div>
       </section>
 
-      {/* Features Grid Section */}
+      {/* Features Grid + Escala Real + Sponsors */}
       <section className="relative z-30 bg-black pt-24 pb-24 px-4 w-full">
+
+        {/* 6 Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
-          <FeatureCard 
-            icon={<span className="text-4xl">🏎️</span>}
+          <FeatureCard
+            icon={
+              // Modified trailer SVG facing right
+              <svg viewBox="0 0 64 32" className="w-14 h-7 text-[#c5a977]" fill="currentColor">
+                <rect x="2"  y="8"  width="36" height="18" rx="3" />
+                <rect x="38" y="12" width="18" height="14" rx="2" />
+                <rect x="54" y="14" width="6"  height="6"  rx="1" opacity="0.6"/>
+                <circle cx="10" cy="27" r="4" fill="#c5a977"/>
+                <circle cx="28" cy="27" r="4" fill="#c5a977"/>
+                <circle cx="48" cy="27" r="4" fill="#c5a977"/>
+                <line x1="0" y1="18" x2="2" y2="15" stroke="#c5a977" strokeWidth="1.5" opacity="0.5"/>
+                <line x1="0" y1="22" x2="2" y2="20" stroke="#c5a977" strokeWidth="1.5" opacity="0.3"/>
+              </svg>
+            }
             title="Arrancones de alto nivel"
             description="Con campeones nacionales y estrellas. Tráilers, corredores y portables reconocidos que ya son referencia en la pista."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={<Flame className="w-10 h-10 text-[#c5a977]" />}
             title="Caravana de arranque"
             description="El convoy que marca el inicio del evento y prende el ambiente desde el primer momento."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={<Truck className="w-10 h-10 text-[#c5a977]" />}
             title="Exhibición masiva"
             description="Más de 350 unidades, desde máquinas clásicas hasta builds extremos totalmente personalizados."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={<span className="text-4xl">🎙️</span>}
             title="Música en vivo"
             description="Ambiente activo durante todo el día para disfrutar en familia o con los amigos."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={<Handshake className="w-10 h-10 text-[#c5a977]" />}
             title="Marcas de la industria"
             description="Empresas clave del sector presentes con experiencias, productos y dinámicas."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={<Star className="w-10 h-10 text-[#c5a977]" />}
             title="Invitados especiales"
             description="Referentes del gremio y nuevas figuras que están marcando tendencia en el transporte."
           />
         </div>
 
-        {/* Sponsors Section */}
-        <div className="mt-24 max-w-6xl mx-auto px-4">
-          <p className="text-center text-[#c5a977]/50 uppercase tracking-[0.3em] text-xs font-bold mb-10">Marcas que hacen posible el evento</p>
-          
-          {/* Main Sponsor */}
-          <div className="flex justify-center mb-10">
-            <div className="border border-[#c5a977] bg-[#0a0a0a] rounded-2xl px-10 py-6 text-center group hover:bg-[#c5a977]/5 transition-colors">
-              <div className="text-3xl font-black text-[#c5a977] tracking-tight leading-none">Mobil Delvac™</div>
-              <div className="text-[0.65rem] uppercase tracking-widest text-[#c5a977]/60 mt-1 font-bold">100 Years · Since 1925 · Patrocinador Principal</div>
-            </div>
-          </div>
-
-          {/* Secondary Sponsors Row 1 */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
-            {[
-              { name: "Santinel Racing", sub: "Racing" },
-              { name: "TCC Logistics", sub: "Logistics" },
-              { name: "Grupo Forza", sub: "GF" },
-            ].map((s) => (
-              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="md" />
-            ))}
-          </div>
-
-          {/* Sponsors Row 2 */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
-            {[
-              { name: "Negritos de la 57", sub: "" },
-              { name: "Autotanques Servin", sub: "Especializados" },
-              { name: "PePes Chrome Shop", sub: "" },
-              { name: "CJ² Concretos", sub: "" },
-            ].map((s) => (
-              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="sm" />
-            ))}
-          </div>
-
-          {/* Sponsors Row 3 */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
-            {[
-              { name: "Hammer Blocks", sub: "" },
-              { name: "Taris", sub: "Construyendo tu Futuro" },
-              { name: "SM Transportes", sub: "" },
-              { name: "8W Enpress Sinaloa", sub: "" },
-            ].map((s) => (
-              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="sm" />
-            ))}
-          </div>
-
-          {/* Sponsors Row 4 */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-3">
-            {[
-              { name: "Licencias Federales", sub: "GPO Corver" },
-              { name: "Durán", sub: "" },
-              { name: "Gorras y Escalas", sub: "Cies El Chaparro" },
-            ].map((s) => (
-              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="sm" />
-            ))}
-          </div>
-
-          {/* Sponsors Row 5 */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[
-              { name: "Yokohama", sub: "" },
-              { name: "Grupo Turbo", sub: "Líderes de México" },
-              { name: "Truck Caps", sub: "Born on the Road · Chucho Cachuchas" },
-            ].map((s) => (
-              <SponsorCard key={s.name} name={s.name} sub={s.sub} size="sm" />
-            ))}
-          </div>
-        </div>
-
+        {/* Escala Real Block */}
         <div className="mt-32 max-w-5xl mx-auto bg-[#0a0a0a] text-[#c5a977] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl border border-[#c5a977]">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#c5a977]/10 to-transparent z-0"></div>
           <div className="relative z-10 mt-4 rounded-3xl">
@@ -187,15 +168,14 @@ export default function Home() {
               <div className="text-white">50+ <span className="text-white/70 block text-sm font-medium mt-1">En competencia</span></div>
             </div>
             <p className="text-2xl md:text-3xl font-medium text-white/90">
-              No existe otra experiencia en México a este nivel dentro del mundo trailero. 
+              No existe otra experiencia en México a este nivel dentro del mundo trailero.
             </p>
             <p className="text-xl md:text-2xl mt-4 font-bold text-white opacity-80">Si te gusta este mundo… aquí es donde tienes que estar.</p>
-            
-            <div className="mt-16 pt-16 border-t border-[#c5a977]/20 text-left md:text-center grid grid-cols-1 md:grid-cols-2 gap-8 text-white/70 flex items-center">
+
+            <div className="mt-16 pt-16 border-t border-[#c5a977]/20 text-left md:text-center grid grid-cols-1 md:grid-cols-2 gap-8 text-white/70">
               <div className="text-sm">
                 <span className="block text-[#c5a977] font-bold mb-2 uppercase tracking-widest text-xs">Acceso</span>
                 La compra de boletos es directamente en el Centro Dinámico Pegaso, te recomendamos llegar con anticipación o con la caravana.
-                
                 <div className="flex gap-4 mt-6 justify-start md:justify-center">
                   <div className="border border-[#c5a977]/30 bg-[#111] rounded-2xl px-6 py-4 flex-1 shadow-lg hover:border-[#c5a977] transition-colors">
                     <div className="text-3xl font-heading text-[#c5a977] leading-none mb-1">$350</div>
@@ -209,20 +189,51 @@ export default function Home() {
               </div>
               <div className="text-sm">
                 <span className="block text-[#c5a977] font-bold mb-2 uppercase tracking-widest text-xs">Página y diseño presentado por</span>
-                Kilómetro Cero — El movimiento musical más viral del momento en la industria del transporte.<br/><br/>
+                Kilómetro Cero — El movimiento musical más viral del momento en la industria del transporte.<br /><br />
                 Nirvania — Agencia Consultora en Inteligencia Artificial.
               </div>
             </div>
           </div>
         </div>
+
+        {/* ── Sponsors Section (AFTER Escala Real) ── */}
+        <div className="mt-24 max-w-6xl mx-auto px-4">
+          <p className="text-center text-[#c5a977]/50 uppercase tracking-[0.3em] text-xs font-bold mb-10">
+            Marcas que hacen posible el evento
+          </p>
+
+          {/* Tier 1 – Main sponsor full-width */}
+          <div className="flex justify-center mb-6">
+            {mainSponsor.map(s => (
+              <SponsorLogo key={s.id} crop={s.crop} cardW={460} cardH={130} />
+            ))}
+          </div>
+
+          {/* Tier 2 – 3 cols */}
+          <div className="grid grid-cols-3 gap-4 mb-4">
+            {tier2Sponsors.map(s => (
+              <SponsorLogo key={s.id} crop={s.crop} cardW={220} cardH={110} />
+            ))}
+          </div>
+
+          {/* Tier 3 – responsive 2→3 cols */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {tier3Sponsors.map(s => (
+              <SponsorLogo key={s.id} crop={s.crop} cardW={220} cardH={100} />
+            ))}
+          </div>
+        </div>
+
       </section>
     </main>
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
+// ─── Components ──────────────────────────────────────────────────────────────
+
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
-    <motion.div 
+    <motion.div
       className="bg-[#0a0a0a] rounded-3xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-xl hover:shadow-[#c5a977]/20 transition-all duration-300 border border-[#c5a977]"
       whileHover={{ y: -5 }}
     >
@@ -235,20 +246,24 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode, titl
   );
 }
 
-function SponsorCard({ name, sub, size = "sm" }: { name: string; sub: string; size?: "md" | "sm" }) {
+function SponsorLogo({ crop, cardW, cardH }: { crop: Crop; cardW: number; cardH: number }) {
+  const bgSizeX = Math.round((IMG_W / crop.w) * cardW);
+  const bgSizeY = Math.round((IMG_H / crop.h) * cardH);
+  const bgPosX  = Math.round(-(crop.x / crop.w) * cardW);
+  const bgPosY  = Math.round(-(crop.y / crop.h) * cardH);
+
   return (
     <motion.div
-      className="bg-[#0a0a0a] border border-[#c5a977]/30 hover:border-[#c5a977] rounded-2xl flex flex-col items-center justify-center text-center px-4 py-5 transition-all duration-300 hover:bg-[#c5a977]/5 group"
-      whileHover={{ y: -3 }}
-    >
-      <div className={`font-black text-[#c5a977] tracking-tight leading-none group-hover:text-[#d4bc8a] transition-colors ${size === "md" ? "text-xl md:text-2xl" : "text-base md:text-lg"}`}>
-        {name}
-      </div>
-      {sub && (
-        <div className="text-[0.6rem] uppercase tracking-widest text-white/40 mt-1.5 font-bold">
-          {sub}
-        </div>
-      )}
-    </motion.div>
+      className="rounded-2xl overflow-hidden border border-[#c5a977]/30 hover:border-[#c5a977] transition-colors cursor-default"
+      style={{
+        width: "100%",
+        height: cardH,
+        backgroundImage: "url('/sponsors.jpg')",
+        backgroundSize:     `${bgSizeX}px ${bgSizeY}px`,
+        backgroundPosition: `${bgPosX}px ${bgPosY}px`,
+        backgroundRepeat:   "no-repeat",
+      }}
+      whileHover={{ scale: 1.02 }}
+    />
   );
 }
