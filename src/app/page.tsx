@@ -79,13 +79,14 @@ export default function Home() {
         </div>
 
         {/* CTA Button #1 – below video */}
-        <div className="flex justify-center mt-10">
+        <div className="flex flex-col items-center mt-10">
           <button
             onClick={() => setModalOpen(true)}
             className="inline-flex items-center justify-center px-12 py-5 bg-[#c5a977] text-black font-bold text-lg uppercase tracking-widest rounded-2xl shadow-[0_0_30px_rgba(197,169,119,0.4)] hover:bg-[#d4bc94] hover:shadow-[0_0_40px_rgba(197,169,119,0.6)] transition-all duration-300 active:scale-95"
           >
             Quiero asistir
           </button>
+          <p className="text-[#c5a977]/60 text-xs mt-3 uppercase tracking-widest font-medium animate-pulse">Clic aquí para registrarte</p>
         </div>
       </section>
 
@@ -181,7 +182,7 @@ export default function Home() {
         </div>
 
         {/* CTA Button #2 – above sponsors */}
-        <div className="flex justify-center mt-16 mb-4">
+        <div className="flex flex-col items-center mt-16 mb-4">
           <button
             id="asistir"
             onClick={() => setModalOpen(true)}
@@ -189,6 +190,7 @@ export default function Home() {
           >
             Quiero asistir
           </button>
+          <p className="text-[#c5a977]/60 text-xs mt-3 uppercase tracking-widest font-medium animate-pulse">Clic aquí para registrarte</p>
         </div>
 
         {/* ── Sponsors Section (AFTER Escala Real) ── */}
