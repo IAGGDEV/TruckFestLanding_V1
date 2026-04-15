@@ -146,10 +146,16 @@ export default function Home() {
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none"></div>
             </div>
 
-            <div className="inline-flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12 font-bold text-xl md:text-2xl mb-12 border-2 border-[#c5a977]/60 rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md p-6 md:px-12 bg-black/60 shadow-lg">
-              <div className="text-white text-center">350+ <span className="text-[#c5a977] block text-xs md:text-sm font-medium mt-1 uppercase tracking-widest">Unidades</span></div>
-              <div className="w-12 h-[2px] sm:w-[2px] sm:h-12 bg-[#c5a977]/30"></div>
-              <div className="text-white text-center">50+ <span className="text-[#c5a977] block text-xs md:text-sm font-medium mt-1 uppercase tracking-widest">En competencia</span></div>
+            <div className="w-full max-w-3xl mx-auto flex flex-col sm:flex-row justify-center items-center gap-0 font-bold mb-12 border-2 border-[#c5a977]/60 rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md bg-black/60 shadow-lg overflow-hidden">
+              <div className="flex-1 flex flex-col items-center justify-center py-8 px-6">
+                <span className="text-5xl md:text-6xl text-white">350+</span>
+                <span className="text-[#c5a977] text-xs md:text-sm font-medium mt-2 uppercase tracking-widest">Unidades</span>
+              </div>
+              <div className="w-full sm:w-[2px] h-[2px] sm:h-24 bg-[#c5a977]/30"></div>
+              <div className="flex-1 flex flex-col items-center justify-center py-8 px-6">
+                <span className="text-5xl md:text-6xl text-white">50+</span>
+                <span className="text-[#c5a977] text-xs md:text-sm font-medium mt-2 uppercase tracking-widest">En competencia</span>
+              </div>
             </div>
             <p className="text-2xl md:text-3xl font-medium text-white/90">
               No existe otra experiencia en México a este nivel dentro del mundo trailero.
