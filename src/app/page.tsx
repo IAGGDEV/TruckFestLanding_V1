@@ -1,11 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Flame, Truck, Handshake, Star } from "lucide-react";
 import { CountdownTimer } from "@/components/CountdownTimer";
+import { Flame, Truck, Handshake, Star } from "lucide-react";
+import { RegistroModal } from "@/components/RegistroModal";
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <main className="min-h-screen bg-white">
       {/* Desktop-only Timer – top right */}
@@ -77,12 +80,12 @@ export default function Home() {
 
         {/* CTA Button #1 – below video */}
         <div className="flex justify-center mt-10">
-          <a
-            href="#asistir"
+          <button
+            onClick={() => setModalOpen(true)}
             className="inline-flex items-center justify-center px-12 py-5 bg-[#c5a977] text-black font-bold text-lg uppercase tracking-widest rounded-2xl shadow-[0_0_30px_rgba(197,169,119,0.4)] hover:bg-[#d4bc94] hover:shadow-[0_0_40px_rgba(197,169,119,0.6)] transition-all duration-300 active:scale-95"
           >
             Quiero asistir
-          </a>
+          </button>
         </div>
       </section>
 
@@ -179,13 +182,13 @@ export default function Home() {
 
         {/* CTA Button #2 – above sponsors */}
         <div className="flex justify-center mt-16 mb-4">
-          <a
-            href="#asistir"
+          <button
             id="asistir"
+            onClick={() => setModalOpen(true)}
             className="inline-flex items-center justify-center px-14 py-5 border-2 border-[#c5a977] text-white font-bold text-xl uppercase tracking-widest rounded-2xl shadow-[0_0_30px_rgba(197,169,119,0.25)] hover:bg-[#c5a977] hover:text-black hover:shadow-[0_0_40px_rgba(197,169,119,0.5)] transition-all duration-300 active:scale-95"
           >
             Quiero asistir
-          </a>
+          </button>
         </div>
 
         {/* ── Sponsors Section (AFTER Escala Real) ── */}
@@ -232,6 +235,8 @@ export default function Home() {
         </p>
 
       </section>
+
+      <RegistroModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </main>
   );
 }
