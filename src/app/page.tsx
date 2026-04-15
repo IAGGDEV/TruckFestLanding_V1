@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CountdownTimer } from "@/components/CountdownTimer";
-import { Flame, Truck, Handshake, Star } from "lucide-react";
+import { Flame, Truck, Handshake, Star, Mic } from "lucide-react";
 import { RegistroModal } from "@/components/RegistroModal";
 
 export default function Home() {
@@ -111,7 +111,7 @@ export default function Home() {
             description="Más de 350 unidades, desde máquinas clásicas hasta builds extremos totalmente personalizados."
           />
           <FeatureCard
-            icon={<span className="text-4xl">🎙️</span>}
+            icon={<Mic className="w-10 h-10 text-[#c5a977]" />}
             title="Música en vivo"
             description="Ambiente activo durante todo el día para disfrutar en familia o con los amigos."
           />
