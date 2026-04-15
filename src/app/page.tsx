@@ -26,11 +26,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        {/* Mobile Timer – absolute at ~65% hero height, in the visual gap */}
-        <div className="md:hidden absolute top-[62%] left-0 right-0 z-20 flex justify-center">
-          <CountdownTimer />
-        </div>
-
+        {/* Title */}
         <div className="relative z-10 text-center w-full px-4 mix-blend-difference">
           <motion.p
             className="text-2xl md:text-4xl font-sans font-semibold text-white mb-2 drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]"
@@ -48,6 +44,11 @@ export default function Home() {
           >
             TRUCK FEST <br /> 2026
           </motion.h1>
+        </div>
+
+        {/* Mobile Timer – inline, right below the 2026 title */}
+        <div className="md:hidden relative z-20 w-full flex justify-center mt-6 px-4">
+          <CountdownTimer />
         </div>
       </section>
 
@@ -145,6 +146,7 @@ export default function Home() {
               <div className="text-sm">
                 <span className="block text-[#c5a977] font-bold mb-2 uppercase tracking-widest text-xs">Acceso</span>
                 La compra de boletos es directamente en el Centro Dinámico Pegaso, te recomendamos llegar con anticipación o con la caravana.
+                <p className="text-white text-sm mt-3 font-medium">El inicio del acceso es a las 10:00 am.</p>
                 <div className="flex gap-4 mt-6 justify-start md:justify-center">
                   <div className="border border-[#c5a977]/30 bg-[#111] rounded-2xl px-6 py-4 flex-1 shadow-lg hover:border-[#c5a977] transition-colors">
                     <div className="text-3xl font-heading text-[#c5a977] leading-none mb-1">$350</div>
